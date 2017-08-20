@@ -47,14 +47,16 @@ body, html {
 }
 
 .nav-content {
+    max-height: 0;
     position:absolute;
     top:60px;
     overflow: hidden;
-    background-color: #444
+    background-color: #222
 }
 
 .nav-content a {
     color:#fff;
+    font-size: .80em;
     text-decoration: none;
 }
 
@@ -75,5 +77,15 @@ body, html {
 .nav-sub ul li a {
     display: inline-block;
     padding: 5px 0;
-    
+}
+
+.nav-item:focus {
+    background-color: #444;
+}
+
+.nav-item:focus ~ .nav-content {
+    max-height: 400px;
+    -webkit-transition:max-height 0.2s ease-in;
+    -moz-transition:max-height 0.2s ease-in;
+    transition:max-height 0.2s ease-in;
 }
